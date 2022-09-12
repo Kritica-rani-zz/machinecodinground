@@ -1,10 +1,11 @@
-import logo from './logo.svg';
+import Todolist from './crud/Todolist';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-     <h1>I will be among the best developers one day</h1>
+     <h1>Daily Practice</h1>
+     <Todolist/>
         
     </div>
   );
