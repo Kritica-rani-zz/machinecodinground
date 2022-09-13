@@ -8,7 +8,10 @@ function Todolist() {
   const item =({isEditable:false,id:Math.random(),body:text})
   setAddList([item,...addList])
   }
-
+  const handleDelete=(id)=>{
+  const filteredData=  addList.filter((item)=>item.id !== id)
+  setAddList(filteredData);
+  }
   return (
   <div>
     <div className="input-container">
@@ -17,7 +20,11 @@ function Todolist() {
     </div>
     {addList && addList.map((item)=>{
       return(
+        <div>
         <li>{item.body}</li>
+        <button onClick={()=>handleDelete(item.id)}>Delete</button>
+        </div>
+        
       )
     })}
   </div>
